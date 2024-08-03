@@ -1,8 +1,11 @@
-import { screen } from '@testing-library/react';
+import { screen, cleanup } from '@testing-library/react';
 import React from 'react';
 
 import TextField from '@/components/TextField';
 import render from '@/utils/test/render';
+
+afterEach(cleanup);
+
 describe('TextField', () => {
   it('className을 props로 설정한 css class가 적용된다.', async () => {
     await render(<TextField className="my-class" />);
