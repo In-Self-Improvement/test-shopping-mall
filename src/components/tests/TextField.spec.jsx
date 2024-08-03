@@ -31,3 +31,12 @@ describe('TextField', () => {
     expect(textInput).toBeInTheDocument();
   });
 });
+
+it('텍스트를 입력하면 onChange props로 등록한 이벤트가 발생한다.', async () => {
+  const spy = vi.fn();
+  const { user } = await render(<TextField onChange={spy} />);
+
+  const textInput = screen.getByPlaceholderText('텍스트를 입력해 주세요.');
+  await user.type(textInput, '테스트');
+  expect(spy).toHaveBeenCalledWith('테스트');
+});
