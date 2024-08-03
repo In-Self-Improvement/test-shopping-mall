@@ -48,4 +48,13 @@ describe('TextField', () => {
     await user.type(textInput, 'test{Enter}');
     expect(spy).toHaveBeenCalledWith('test');
   });
+
+  it('포커스가 활성화되면 onFocus props로 등록한 함수가 호출된다.', async () => {
+    const spy = vi.fn();
+    const { user } = await render(<TextField onFocus={spy} />);
+    const textInput = screen.getByPlaceholderText('텍스트를 입력해 주세요.');
+
+    await user.click(textInput);
+    expect(spy).toHaveBeenCalled();
+  });
 });
