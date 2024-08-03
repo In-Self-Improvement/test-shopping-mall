@@ -57,4 +57,15 @@ describe('TextField', () => {
     await user.click(textInput);
     expect(spy).toHaveBeenCalled();
   });
+
+  it('포커스가 활성화되면 border 스타일이 추가된다.', async () => {
+    const { user } = await render(<TextField />);
+    const textInput = screen.getByPlaceholderText('텍스트를 입력해 주세요.');
+
+    await user.click(textInput);
+    expect(textInput).toHaveStyle({
+      borderWidth: 2,
+      borderColor: 'rgb(25, 118, 210)',
+    });
+  });
 });
