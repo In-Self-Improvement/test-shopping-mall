@@ -39,4 +39,13 @@ describe('TextField', () => {
     await user.type(textInput, '테스트');
     expect(spy).toHaveBeenCalledWith('테스트');
   });
+
+  it('엔터키를 입력하면 onEnter props로 등록한 이벤트가 발생한다.', async () => {
+    const spy = vi.fn();
+    const { user } = await render(<TextField onEnter={spy} />);
+    const textInput = screen.getByPlaceholderText('텍스트를 입력해 주세요.');
+
+    await user.type(textInput, 'test{Enter}');
+    expect(spy).toHaveBeenCalledWith('test');
+  });
 });
