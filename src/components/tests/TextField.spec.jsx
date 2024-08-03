@@ -8,7 +8,7 @@ describe('TextField', () => {
     await render(<TextField className="my-class" />);
 
     const textInput = screen.getByPlaceholderText('텍스트를 입력해 주세요.');
-    screen.debug();
+
     expect(textInput).toHaveClass('my-class');
   });
 
