@@ -4,12 +4,15 @@ import React from 'react';
 import TextField from '@/components/TextField';
 import render from '@/utils/test/render';
 
+const PLACEHOLDER_TEXT = '텍스트를 입력해 주세요.';
+const PLACEHOLDER_PRODUCT = '상품명을 입력해주세요.';
+
 afterEach(cleanup);
 
 const setup = async (props = {}) => {
   const utils = await render(<TextField {...props} />);
   const textInput = screen.getByPlaceholderText(
-    props.placeholder || '텍스트를 입력해 주세요.',
+    props.placeholder || PLACEHOLDER_TEXT,
   );
   return {
     ...utils,
@@ -30,7 +33,7 @@ describe('TextField', () => {
 
   it('placeholder props에 따라 placeholder가 변경된다.', async () => {
     const { textInput } = await setup({
-      placeholder: '상품명을 입력해주세요.',
+      placeholder: PLACEHOLDER_PRODUCT,
     });
     expect(textInput).toBeInTheDocument();
   });
