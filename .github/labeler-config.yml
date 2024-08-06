@@ -1,0 +1,86 @@
+filters:
+  - label: 🎒 BE
+    regexs:
+      - /backend|BE|server/
+      - /백엔드/
+    events: [issues, pull_request]
+    targets: [title, body]
+
+  - label: 🐞 BugFix
+    regexs:
+      - /Fix|fix|bugfix|correct/
+      - /이슈|오류|문제|에러|처리/
+    events: [issues, pull_request]
+    targets: [title, body]
+
+  - label:  🚀 Deploy
+    regexs:
+      - /deploy|deployment|CD/
+      - /배포|머지/
+    events: [issues, pull_request]
+    targets: [title, body]
+
+  - label: 📃 Docs
+    regexs:
+      - /docs|documentation|README/
+      - /문서/
+    events: [issues, pull_request]
+    targets: [title, body]
+
+  - label: 🐥 FE
+    regexs:
+      - /frontend|FE|React|Vue|Angular/
+      - /프론트/
+    events: [issues, pull_request]
+    targets: [title, body]
+
+  - label: ✨ Feature
+    regexs:
+      - /Feat|feature|feat|enhancement|new/
+      - /기능|구현|개발|적용/
+    events: [issues, pull_request]
+    targets: [title, body]
+
+  - label: 🎨 HTML&CSS
+    regexs:
+      - /Design|HTML|CSS|styling|layout/
+      - /디자인/
+    events: [issues, pull_request]
+    targets: [title, body]
+
+  - label: 🔧 Modify
+    regexs:
+      - /Update|modify|update|change/
+      - /업데이트|변경|조정|삭제|추가/
+      - /^(?!.*오류 수정)|수정/
+      - />|->/
+    events: [issues, pull_request]
+    targets: [title, body]
+
+  - label: 🙋‍♂️ Question
+    regexs:
+      - /question|help wanted|inquiry/
+      - /질문/
+    events: [issues, pull_request]
+    targets: [title, body]
+
+  - label: ♻️ Refactor
+    regexs:
+      - /refactor|code quality|clean up/
+      - /리팩토링|리팩터링|이동/
+    events: [issues, pull_request]
+    targets: [title, body]
+
+  - label: ⚙ Setting
+    regexs:
+      - /setting|config|configuration/
+      - /환경|설정/
+    events: [issues, pull_request]
+    targets: [title, body]
+
+  - label: ✅ Test
+    regexs:
+      - /Test|test|testing|TDD/
+      - /테스트/
+    events: [issues, pull_request]
+    targets: [title, body]
